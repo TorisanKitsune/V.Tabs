@@ -3,16 +3,14 @@
 //    Defines the Setup type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-using MvvmCross.BindingEx.Wpf;
+using MvvmCross.Binding;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Wpf.Platform;
+using MvvmCross.Wpf.Views;
+using System.Windows.Threading;
 
 namespace V.Tabs.Wpf
 {
-    using MvvmCross.Core.ViewModels;
-    using MvvmCross.Wpf.Platform;
-    using MvvmCross.Wpf.Views;
-    using System.Windows.Threading;
-
     /// <summary>
     ///  Defines the Setup type.
     /// </summary>
@@ -42,7 +40,7 @@ namespace V.Tabs.Wpf
         {
             base.InitializeLastChance();
 
-            var builder = new MvxWindowsBindingBuilder();            
+            var builder = new MvxBindingBuilder();            
             builder.DoRegistration();
         }
     }

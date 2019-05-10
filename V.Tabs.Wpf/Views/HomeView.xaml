@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"             
-             xmlns:mvx="clr-namespace:MvvmCross.BindingEx.Wpf;assembly=MvvmCross.BindingEx.Wpf"
              xmlns:views="clr-namespace:V.Tabs.Wpf.Views"
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="1188">
@@ -37,13 +36,13 @@
                             <ColumnDefinition Width="2.5*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="1" Margin="0,0,5,0">
-                            <Button Content="Tab One" mvx:Bi.nd="Command ShowTabOneCommand"></Button>
+                            <Button Content="Tab One" Command="{Binding ShowTabOneCommand}"></Button>
                         </Grid>
                         <Grid Grid.Column="2" Margin="0,0,5,0">
-                            <Button Content="Tab Two" mvx:Bi.nd="Command ShowTabTwoCommand"></Button>
+                            <Button Content="Tab Two" Command="{Binding ShowTabTwoCommand}"></Button>
                         </Grid>
                         <Grid Grid.Column="3" Margin="0,0,5,0">
-                            <Button Content="Tab Three" mvx:Bi.nd="Command ShowTabThreeCommand"></Button>
+                            <Button Content="Tab Three" Command="{Binding ShowTabThreeCommand}"></Button>
                         </Grid>
                     </Grid>
                 </Grid>
