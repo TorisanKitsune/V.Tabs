@@ -11,6 +11,8 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Exceptions;
 using MvvmCross.Platform.Platform;
 using V.Tabs.Wpf.Views;
+using MvvmCross.Wpf.Views.Presenters;
+using MvvmCross.Wpf.Views.Presenters.Attributes;
 
 namespace V.Tabs.Wpf.Utilities
 {
@@ -32,9 +34,9 @@ namespace V.Tabs.Wpf.Utilities
         {
             try
             {
-                var loader = Mvx.Resolve<IMvxSimpleWpfViewLoader>();
+                var loader = Mvx.Resolve<IMvxWpfViewLoader>();
                 var view = loader.CreateView(request);
-                Present(view);
+                ShowContentView(view, null, null);
             }
             catch (Exception exception)
             {
@@ -68,7 +70,8 @@ namespace V.Tabs.Wpf.Utilities
             base.ChangePresentation(hint);
         }
 
-        public override void Present(FrameworkElement frameworkElement)
+        protected override void ShowContentView(FrameworkElement frameworkElement, MvxContentPresentationAttribute presentationAttribute, MvxViewModelRequest request) 
+        //public override void ShowContentView(FrameworkElement frameworkElement)
         {
             //grab the attribute off of the view
             var attribute = frameworkElement

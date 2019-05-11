@@ -7,6 +7,7 @@ using MvvmCross.Binding;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Wpf.Platform;
 using MvvmCross.Wpf.Views;
+using MvvmCross.Wpf.Views.Presenters;
 using System.Windows.Threading;
 
 namespace V.Tabs.Wpf

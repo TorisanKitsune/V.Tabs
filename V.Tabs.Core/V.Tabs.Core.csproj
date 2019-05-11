@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Binding" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Core" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Platform" Version="4.4.0" />
+    <PackageReference Include="MvvmCross" Version="5.7.0" />
+    <PackageReference Include="MvvmCross.Binding" Version="5.7.0" />
+    <PackageReference Include="MvvmCross.Core" Version="5.7.0" />
+    <PackageReference Include="MvvmCross.Platform" Version="5.7.0" />
   </ItemGroup>
   
 </Project>
