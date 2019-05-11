@@ -9,13 +9,8 @@
     <PackageReference Include="MvvmCross.Binding" Version="4.4.0" />
     <PackageReference Include="MvvmCross.Core" Version="4.4.0" />
     <PackageReference Include="MvvmCross.Platform" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.Color" Version="4.4.0" />
     <PackageReference Include="MvvmCross.Plugin.FieldBinding" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="4.4.0" />
     <PackageReference Include="MvvmCross.Plugin.MethodBinding" Version="4.4.0" />
-    <PackageReference Include="MvvmCross.Plugin.Visibility" Version="4.4.0" />
-    <PackageReference Include="Scorchio.NinjaCoder.MvvmCross.Core" Version="2.0.0" />
-    <PackageReference Include="Scorchio.NinjaCoder.MvvmHelper.Core" Version="1.0.0" />
   </ItemGroup>
   
 </Project>

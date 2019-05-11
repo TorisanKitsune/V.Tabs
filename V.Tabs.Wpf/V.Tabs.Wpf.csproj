@@ -52,11 +52,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Behaviours\WebBrowserBehaviour.cs" />
-    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
     <Compile Include="Bootstrap\FieldBindingPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MethodBindingPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Utilities\Region.cs" />
     <Compile Include="Utilities\RegionAttribute.cs" />
@@ -138,23 +135,11 @@
     <PackageReference Include="MvvmCross.Platform">
       <Version>4.4.0</Version>
     </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Color">
-      <Version>4.4.0</Version>
-    </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.FieldBinding">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Messenger">
       <Version>4.4.0</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.MethodBinding">
       <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Visibility">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="Scorchio.NinjaCoder.MvvmCross.Wpf">
-      <Version>2.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

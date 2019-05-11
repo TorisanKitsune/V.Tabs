@@ -10,7 +10,6 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Exceptions;
 using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Messenger;
 using V.Tabs.Wpf.Views;
 
 namespace V.Tabs.Wpf.Utilities
