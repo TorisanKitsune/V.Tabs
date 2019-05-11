@@ -31,17 +31,14 @@ namespace V.Tabs.Wpf
         /// Creates the app.
         /// </summary>
         /// <returns>An instance of MvxApplication</returns>
-        protected override IMvxApplication CreateApp()
-        {
-            return new Core.App();
-        }
+        protected override IMvxApplication CreateApp() => new Core.App();
 
 
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
 
-            var builder = new MvxBindingBuilder();            
+            MvxBindingBuilder builder = new MvxBindingBuilder();            
             builder.DoRegistration();
         }
     }

@@ -14,18 +14,13 @@ namespace V.Tabs.Core.ViewModels
     /// </summary>
     public class HomeViewModel : MvxViewModel
     {
-
-        private MvxCommand showTabOneCommand;
         private readonly IMvxNavigationService _navigationService;
 
         public MvxCommand ShowTabOneCommand => new MvxCommand(() => _navigationService.Navigate<TabOneViewModel>());
         public ICommand ShowTabTwoCommand => new MvxCommand(() => _navigationService.Navigate<TabTwoViewModel>());
         public ICommand ShowTabThreeCommand => new MvxCommand(() => _navigationService.Navigate<TabThreeViewModel>());
 
-        public HomeViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
-        }
+        public HomeViewModel(IMvxNavigationService navigationService) => _navigationService = navigationService;
     }
 }
 

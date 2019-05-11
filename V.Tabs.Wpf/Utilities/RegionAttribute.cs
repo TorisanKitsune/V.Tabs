@@ -10,9 +10,6 @@ namespace V.Tabs.Wpf.Utilities
     {
         public Region Region { get; private set; }
 
-        public RegionAttribute(Region region)
-        {
-            Region = region;
-        }
+        public RegionAttribute(Region region) => Region = region;
     }
 }

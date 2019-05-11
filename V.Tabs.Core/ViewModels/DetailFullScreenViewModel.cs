@@ -32,10 +32,7 @@ namespace V.Tabs.Core.ViewModels
 
         public ICommand CloseCommand => new MvxCommand(() => _navigationService.Close(this));
 
-        public DetailFullScreenViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
-        }
+        public DetailFullScreenViewModel(IMvxNavigationService navigationService) => _navigationService = navigationService;
     }
 }
 

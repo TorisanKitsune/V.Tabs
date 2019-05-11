@@ -32,10 +32,7 @@ namespace V.Tabs.Core.ViewModels
         }
 
         public ICommand ShowFullScreenViewCommand => new MvxCommand(() => _navigationService.Navigate<DetailFullScreenViewModel>());
-        public TabOneViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
-        }
+        public TabOneViewModel(IMvxNavigationService navigationService) => _navigationService = navigationService;
     }
 }
 

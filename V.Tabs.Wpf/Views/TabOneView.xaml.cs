@@ -17,10 +17,7 @@ namespace V.Tabs.Wpf.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="TabOneView"/> class.
         /// </summary>
-        public TabOneView() 
-        {
-            this.InitializeComponent();
-        }
+        public TabOneView() => InitializeComponent();
     }
 }
 

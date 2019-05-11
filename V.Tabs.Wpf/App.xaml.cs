@@ -21,14 +21,14 @@ namespace V.Tabs.Wpf
         /// <summary>
         /// Setup complete indicator.
         /// </summary>
-        private bool setupComplete;
+        private Boolean setupComplete;
 
         /// <summary>
         /// Does the setup.
         /// </summary>
         private void DoSetup()
         {
-            var presenter = new TabPresenter(MainWindow);
+            TabPresenter presenter = new TabPresenter(MainWindow);
 
             Setup setup = new Setup(Dispatcher, presenter);
             setup.Initialize();
@@ -36,7 +36,7 @@ namespace V.Tabs.Wpf
             IMvxAppStart start = Mvx.Resolve<IMvxAppStart>();
             start.Start();
 
-            this.setupComplete = true;
+            setupComplete = true;
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace V.Tabs.Wpf
         /// <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
         protected override void OnActivated(EventArgs e)
         {
-            if (!this.setupComplete)
+            if (!setupComplete)
             {
-                this.DoSetup();
+                DoSetup();
             }
 
             base.OnActivated(e);

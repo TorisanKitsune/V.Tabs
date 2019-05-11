@@ -17,10 +17,7 @@ namespace V.Tabs.Wpf.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="TabThreeView"/> class.
         /// </summary>
-        public TabThreeView() 
-        {
-            this.InitializeComponent();
-        }
+        public TabThreeView() => InitializeComponent();
     }
 }
 

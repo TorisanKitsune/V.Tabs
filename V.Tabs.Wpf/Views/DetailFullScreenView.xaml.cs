@@ -17,10 +17,7 @@ namespace V.Tabs.Wpf.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="DetailFullScreenView"/> class.
         /// </summary>
-        public DetailFullScreenView() 
-        {
-            this.InitializeComponent();
-        }
+        public DetailFullScreenView() => InitializeComponent();
     }
 }
 

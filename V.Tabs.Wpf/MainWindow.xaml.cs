@@ -13,9 +13,6 @@ namespace V.Tabs.Wpf
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
-        public MainWindow()
-        {
-            this.InitializeComponent();
-        }
+        public MainWindow() => InitializeComponent();
     }
 }
