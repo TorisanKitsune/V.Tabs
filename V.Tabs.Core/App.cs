@@ -3,12 +3,12 @@
 //    Defines the App type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.IoC;
+using V.Tabs.Core.ViewModels;
+
 namespace V.Tabs.Core
 {
-    using MvvmCross.Core.ViewModels;
-    using MvvmCross.Platform.IoC;
-    using ViewModels;
-
     /// <summary>
     /// Define the App type.
     /// </summary>
@@ -19,13 +19,13 @@ namespace V.Tabs.Core
         /// </summary>
         public override void Initialize()
         {
-            this.CreatableTypes()
+            CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
             //// Start the app with the Main View Model.
-            this.RegisterAppStart<HomeViewModel>();
+            RegisterAppStart<HomeViewModel>();
         }
     }
 }

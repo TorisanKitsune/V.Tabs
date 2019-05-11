@@ -4,48 +4,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 namespace V.Tabs.Core.ViewModels
-{ 
+{
+    using MvvmCross.Core.Navigation;
     using MvvmCross.Core.ViewModels;
+    using System;
     using System.Windows.Input;
 
     /// <summary>
     /// Define the TabOneViewModel type.
     /// </summary>
-    public class TabOneViewModel : BaseViewModel
+    public class TabOneViewModel : MvxViewModel
     {
         /// <summary>
         /// Backing field for my property.
         /// </summary>
-        private string myProperty = "Tab One";
+        private String myProperty = "Tab One";
+        private readonly IMvxNavigationService _navigationService;
 
-      
+
         /// <summary>
         /// Gets or sets my property.
         /// </summary>
-        public string MyProperty
+        public String MyProperty
         {
-            get { return this.myProperty; }
-            set { this.SetProperty(ref this.myProperty, value, ()=> this.MyProperty); }
+            get => myProperty;
+            set => SetProperty(ref myProperty, value);
         }
 
-        private MvxCommand showFullScreenViewCommand;
-
-        public MvxCommand ShowFullScreenViewCommand
+        public ICommand ShowFullScreenViewCommand => new MvxCommand(() => _navigationService.Navigate<DetailFullScreenViewModel>());
+        public TabOneViewModel(IMvxNavigationService navigationService)
         {
-            get
-            {
-                showFullScreenViewCommand = showFullScreenViewCommand ?? new MvxCommand(DoShowFullScreenView);
-                return showFullScreenViewCommand;
-            }
+            _navigationService = navigationService;
         }
-
-        private void DoShowFullScreenView()
-        {
-            ShowViewModel<DetailFullScreenViewModel>();
-        }
-
-
-
     }
 }
 

@@ -3,31 +3,33 @@
 //    Defines the TabThreeViewModel type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+using MvvmCross.Core.ViewModels;
+using System;
+using System.Windows.Input;
+
 namespace V.Tabs.Core.ViewModels
 { 
-    using MvvmCross.Core.ViewModels;
-    using System.Windows.Input;
 
     /// <summary>
     /// Define the TabThreeViewModel type.
     /// </summary>
-    public class TabThreeViewModel : BaseViewModel
+    public class TabThreeViewModel : MvxViewModel
     {
         /// <summary>
         /// Backing field for my property.
         /// </summary>
-        private string myProperty = "Tab Three";
+        private String myProperty = "Tab Three";
 
 
         /// <summary>
         /// Gets or sets my property.
         /// </summary>
-        public string MyProperty
+        public String MyProperty
         {
-            get { return this.myProperty; }
-            set { this.SetProperty(ref this.myProperty, value, ()=> this.MyProperty); }
+            get => myProperty;
+            set => SetProperty(ref myProperty, value);
         }
-    
+
     }
 }
 

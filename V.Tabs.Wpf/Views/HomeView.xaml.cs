@@ -20,21 +20,18 @@ namespace V.Tabs.Wpf.Views
 
         private HomeViewModel viewModel;
 
-        public new HomeViewModel ViewModel
-        {
-            get { return viewModel ?? (viewModel = base.ViewModel as HomeViewModel); }
-        }
+        public new HomeViewModel ViewModel => viewModel ?? (viewModel = base.ViewModel as HomeViewModel);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HomeView"/> class.
         /// </summary>
         public HomeView() 
         {
-            this.InitializeComponent();
+            InitializeComponent();
             Loaded += HomeViewLoaded;
         }
 
-        private void HomeViewLoaded(object sender, RoutedEventArgs e)
+        private void HomeViewLoaded(Object sender, RoutedEventArgs e)
         {
             ViewModel.ShowTabOneCommand.Execute();
             Loaded -= HomeViewLoaded;

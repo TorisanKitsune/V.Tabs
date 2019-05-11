@@ -4,49 +4,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 namespace V.Tabs.Core.ViewModels
-{ 
+{
+    using MvvmCross.Core.Navigation;
     using MvvmCross.Core.ViewModels;
+    using System;
     using System.Windows.Input;
 
     /// <summary>
     /// Define the DetailFullScreenViewModel type.
     /// </summary>
-    public class DetailFullScreenViewModel : BaseViewModel
+    public class DetailFullScreenViewModel : MvxViewModel
     {
         /// <summary>
         /// Backing field for my property.
         /// </summary>
-        private string myProperty = "Full Screen View";
-
-      
+        private String _myProperty = "Full Screen View";
+        private readonly IMvxNavigationService _navigationService;
 
         /// <summary>
         /// Gets or sets my property.
         /// </summary>
-        public string MyProperty
+        public String MyProperty
         {
-            get { return this.myProperty; }
-            set { this.SetProperty(ref this.myProperty, value, ()=> this.MyProperty); }
+            get => _myProperty;
+            set => SetProperty(ref _myProperty, value);
         }
 
-        private MvxCommand closeCommand;
+        public ICommand CloseCommand => new MvxCommand(() => _navigationService.Close(this));
 
-        public MvxCommand CloseCommand
+        public DetailFullScreenViewModel(IMvxNavigationService navigationService)
         {
-            get
-            {
-                closeCommand = closeCommand ?? new MvxCommand(DoCloseCommand);
-                return closeCommand;
-            }
+            _navigationService = navigationService;
         }
-
-        private void DoCloseCommand()
-        {
-            Close(this);
-        }
-
-
-
     }
 }
 

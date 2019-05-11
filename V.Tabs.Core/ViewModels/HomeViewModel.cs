@@ -4,67 +4,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 namespace V.Tabs.Core.ViewModels
-{ 
+{
+    using MvvmCross.Core.Navigation;
     using MvvmCross.Core.ViewModels;
     using System.Windows.Input;
 
     /// <summary>
     /// Define the HomeViewModel type.
     /// </summary>
-    public class HomeViewModel : BaseViewModel
+    public class HomeViewModel : MvxViewModel
     {
 
         private MvxCommand showTabOneCommand;
+        private readonly IMvxNavigationService _navigationService;
 
-        public MvxCommand ShowTabOneCommand
+        public MvxCommand ShowTabOneCommand => new MvxCommand(() => _navigationService.Navigate<TabOneViewModel>());
+        public ICommand ShowTabTwoCommand => new MvxCommand(() => _navigationService.Navigate<TabTwoViewModel>());
+        public ICommand ShowTabThreeCommand => new MvxCommand(() => _navigationService.Navigate<TabThreeViewModel>());
+
+        public HomeViewModel(IMvxNavigationService navigationService)
         {
-            get
-            {
-                showTabOneCommand = showTabOneCommand ?? new MvxCommand(DoShowTabOne);
-                return showTabOneCommand;
-            }
+            _navigationService = navigationService;
         }
-
-        private void DoShowTabOne()
-        {
-            ShowViewModel<TabOneViewModel>();
-        }
-
-        private MvxCommand showTabTwoCommand;
-
-        public MvxCommand ShowTabTwoCommand
-        {
-            get
-            {
-                showTabTwoCommand = showTabTwoCommand ?? new MvxCommand(DoShowTabTwo);
-                return showTabTwoCommand;
-            }
-        }
-
-        private void DoShowTabTwo()
-        {
-            ShowViewModel<TabTwoViewModel>();
-        }
-
-        private MvxCommand showTabThreeCommand;
-
-        public MvxCommand ShowTabThreeCommand
-        {
-            get
-            {
-                showTabThreeCommand = showTabThreeCommand ?? new MvxCommand(DoShowTabThree);
-                return showTabThreeCommand;
-            }
-        }
-
-        private void DoShowTabThree()
-        {
-            ShowViewModel<TabThreeViewModel>();
-        }
-
-
-
-
     }
 }
 
