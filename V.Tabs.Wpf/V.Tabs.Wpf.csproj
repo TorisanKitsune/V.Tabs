@@ -55,7 +55,6 @@
     <Compile Include="Utilities\Region.cs" />
     <Compile Include="Utilities\RegionAttribute.cs" />
     <Compile Include="Utilities\TabPresenter.cs" />
-    <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\DetailFullScreenView.xaml.cs">
       <DependentUpon>DetailFullScreenView.xaml</DependentUpon>
     </Compile>
