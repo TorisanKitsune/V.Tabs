@@ -13,16 +13,22 @@ using MvvmCross.Platform.Platform;
 using V.Tabs.Wpf.Views;
 using MvvmCross.Wpf.Views.Presenters;
 using MvvmCross.Wpf.Views.Presenters.Attributes;
+using MvvmCross.Platform.Logging;
 
 namespace V.Tabs.Wpf.Utilities
 {
     public class TabPresenter : MvxWpfViewPresenter
     {
+        private IMvxLog _log;
         private readonly ContentControl _mainWindow;
         private readonly Stack<FrameworkElement> _navigationStack = new Stack<FrameworkElement>();
         private HomeView _homeView;
 
-        public TabPresenter(ContentControl mainWindow) => _mainWindow = mainWindow;
+        public TabPresenter(ContentControl mainWindow)
+        {
+            _mainWindow = mainWindow;
+
+        }
 
         public override void Show(MvxViewModelRequest request)
         {
@@ -34,8 +40,13 @@ namespace V.Tabs.Wpf.Utilities
             }
             catch (Exception exception)
             {
-                MvxTrace.Error("Error seen during navigation request to {0} - error {1}", request.ViewModelType.Name,
-                               exception.ToLongString());
+                if (_log == null)
+                {
+                    IMvxLogProvider provider = Mvx.Resolve<IMvxLogProvider>();
+                    _log = provider.GetLogFor<TabPresenter>();
+                }
+                _log.ErrorException("Error seen during navigation request to {0} - error {1}", 
+                    exception, request.ViewModelType.Name,exception.ToLongString());
             }
         }
 
