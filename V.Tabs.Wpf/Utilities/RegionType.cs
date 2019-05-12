@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace V.Tabs.Wpf.Utilities
 {
-    public enum Region
+    public enum RegionType
     {
         Unknown,
         FullScreen,  

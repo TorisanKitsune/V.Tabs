@@ -11,7 +11,7 @@ namespace V.Tabs.Wpf.Views
     /// <summary>
     ///    Defines the TabThreeView.xaml type.
     /// </summary>
-    [Region(Region.Tab)]
+    [Region(RegionType.Tab)]
     public partial class TabThreeView
     {
         /// <summary>

@@ -52,7 +52,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Setup.cs" />
-    <Compile Include="Utilities\Region.cs" />
+    <Compile Include="Utilities\RegionType.cs" />
     <Compile Include="Utilities\RegionAttribute.cs" />
     <Compile Include="Utilities\TabPresenter.cs" />
     <Compile Include="Views\DetailFullScreenView.xaml.cs">

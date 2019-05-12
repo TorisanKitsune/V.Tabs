@@ -14,7 +14,7 @@ namespace V.Tabs.Wpf.Views
     /// <summary>
     ///    Defines the HomeView.xaml type.
     /// </summary>
-    [Region(Region.BaseTab)]
+    [Region(RegionType.BaseTab)]
     public partial class HomeView
     {
 

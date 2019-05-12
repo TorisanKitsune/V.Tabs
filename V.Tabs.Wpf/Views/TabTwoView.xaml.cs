@@ -11,7 +11,7 @@ namespace V.Tabs.Wpf.Views
     /// <summary>
     ///    Defines the TabTwoView.xaml type.
     /// </summary>
-    [Region(Region.Tab)]
+    [Region(RegionType.Tab)]
     public partial class TabTwoView
     {
         /// <summary>

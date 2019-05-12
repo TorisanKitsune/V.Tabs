@@ -27,7 +27,6 @@ namespace V.Tabs.Wpf.Utilities
         public TabPresenter(ContentControl mainWindow)
         {
             _mainWindow = mainWindow;
-
         }
 
         public override void Show(MvxViewModelRequest request)
@@ -78,20 +77,20 @@ namespace V.Tabs.Wpf.Utilities
         //public override void ShowContentView(FrameworkElement frameworkElement)
         {
             //grab the attribute off of the view
-            Region regionName = !(frameworkElement
+            RegionType regionName = !(frameworkElement
                                 .GetType()
                                 .GetCustomAttributes(typeof(RegionAttribute), true)
-                                .FirstOrDefault() is RegionAttribute attribute) ? Region.Unknown : attribute.Region;
+                                .FirstOrDefault() is RegionAttribute attribute) ? RegionType.Unknown : attribute.Region;
 
             //based on region decide where we are going to show it
             switch (regionName)
             {               
-                case Region.BaseTab:
+                case RegionType.BaseTab:
                     //set the base tab
                     _mainWindow.Content = frameworkElement;
                     _homeView = (HomeView)frameworkElement;
                     break;
-                case Region.Tab:                                       
+                case RegionType.Tab:                                       
                     if (_navigationStack.Any())
                     {
                         _navigationStack.Pop();
@@ -102,7 +101,7 @@ namespace V.Tabs.Wpf.Utilities
                     _navigationStack.Push(frameworkElement);
 
                     break;
-                case Region.FullScreen:
+                case RegionType.FullScreen:
                     //view that requires full screen
                     //but can navigate backwards
                     _mainWindow.Content = frameworkElement;

@@ -11,7 +11,7 @@ namespace V.Tabs.Wpf.Views
     /// <summary>
     ///    Defines the DetailFullScreenView.xaml type.
     /// </summary>
-    [Region(Region.FullScreen)]
+    [Region(RegionType.FullScreen)]
     public partial class DetailFullScreenView
     {
         /// <summary>

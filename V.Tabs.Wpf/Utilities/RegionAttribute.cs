@@ -8,8 +8,8 @@ namespace V.Tabs.Wpf.Utilities
 {
     public class RegionAttribute : Attribute
     {
-        public Region Region { get; private set; }
+        public RegionType Region { get; private set; }
 
-        public RegionAttribute(Region region) => Region = region;
+        public RegionAttribute(RegionType region) => Region = region;
     }
 }

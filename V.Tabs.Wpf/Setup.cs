@@ -38,7 +38,7 @@ namespace V.Tabs.Wpf
         {
             base.InitializeLastChance();
 
-            MvxBindingBuilder builder = new MvxBindingBuilder();            
+            MvxBindingBuilder builder = new MvxBindingBuilder();
             builder.DoRegistration();
         }
     }
