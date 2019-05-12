@@ -42,8 +42,7 @@ namespace V.Tabs.Wpf.Utilities
             {
                 if (_log == null)
                 {
-                    IMvxLogProvider provider = Mvx.Resolve<IMvxLogProvider>();
-                    _log = provider.GetLogFor<TabPresenter>();
+                    _log = Mvx.Resolve<IMvxLog>();
                 }
                 _log.ErrorException("Error seen during navigation request to {0} - error {1}", 
                     exception, request.ViewModelType.Name,exception.ToLongString());
